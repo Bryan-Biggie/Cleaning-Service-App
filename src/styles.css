@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
+@import url("../node_modules/wowjs/css/libs/animate.css");
+@import url("../node_modules/animate.css/animate.min.css");
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+
 * {
   box-sizing: border-box;
 }

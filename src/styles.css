@@ -9,10 +9,10 @@
 @import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 /* Import Angular Material theme */
-@import '@angular/material/prebuilt-themes/purple-green.css';
+/* @import '@angular/material/prebuilt-themes/purple-green.css'; */
 
 /* Import Bootstrap Icons from CDN */
-@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css');
+/* @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css'); */
 
 
 * {

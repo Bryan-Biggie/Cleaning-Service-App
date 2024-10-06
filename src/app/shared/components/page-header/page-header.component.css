@@ -1,0 +1,9 @@
+.page-header {
+    background: linear-gradient(rgba(0, 14, 19, 0.644), rgba(0, 0, 0, 0.911)), url(../../../../assets/img/carousel-2.jpg) center center no-repeat;
+    background-size: cover;
+    margin-bottom: 6rem;
+}
+
+li{
+    font-family: 'Open Sans';
+}

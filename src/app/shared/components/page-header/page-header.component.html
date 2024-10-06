@@ -1,0 +1,34 @@
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5">
+    <div class="container text-center py-5">
+      <h1 class="display-2 text-white mb-4 animated slideInDown">{{ pageTitle }}</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+          <li *ngFor="let breadcrumb of breadcrumbs; let last = last" class="breadcrumb-item" [ngClass]="{'text-white': last}">
+            <ng-container *ngIf="!last">
+              <a *ngIf="breadcrumb.link" [routerLink]="breadcrumb.link">{{ breadcrumb.name }}</a>
+              <span *ngIf="!breadcrumb.link">{{ breadcrumb.name }}</span>
+            </ng-container>
+            <span *ngIf="last">{{ breadcrumb.name }}</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- Page Header End -->
+
+  
+          <!-- Page Header Start -->
+          <!-- <div class="container-fluid page-header py-5">
+            <div class="container text-center py-5">
+                <h1 class="display-2 text-white mb-4 animated slideInDown">404 Error</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item text-white" aria-current="page">404 Error</li>
+                    </ol>
+                </nav>
+            </div>
+        </div> -->
+        <!-- Page Header End -->

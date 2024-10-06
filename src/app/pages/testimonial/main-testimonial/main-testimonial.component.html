@@ -1,0 +1,55 @@
+<!-- Testimonial Start -->
+<div class="container-fluid testimonial py-5">
+    <div class="container py-5">
+      <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+        <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Testimonial</h5>
+        <h1 class="display-5 w-50 mx-auto">What Clients Say About Our Services</h1>
+      </div>
+      <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay=".5s">
+        <swiper-container
+          class="mySwiper wow fadeInUp"
+          pagination="true"
+          pagination-clickable="true"
+          loop="true"
+          space-between="30"
+          free-mode="true"
+          data-wow-delay=".5s"
+          [breakpoints]="swiperBreakpoints">
+          
+          <ng-container *ngFor="let testimonial of testimonials">
+            <swiper-slide>
+              <div class="testimonial-item">
+                <div class="testimonial-content rounded mb-4 p-4">
+                  <p class="fs-5 m-0">{{ testimonial.message }}</p>
+                </div>
+                <div class="d-flex align-items-center mb-4" style="padding: 0 0 0 25px;">
+                  <div class="position-relative">
+                    <img [src]="testimonial.imageUrl" class="img-fluid rounded-circle py-2" alt="">
+                    <div class="position-absolute" style="top: 33px; left: -25px;">
+                      <i class="fa fa-quote-left rounded-pill bg-primary text-dark p-3">
+                        <fa-icon [icon]="faQuoteLeft"></fa-icon>
+                      </i>
+                    </div>
+                  </div>
+                  <div class="ms-3">
+                    <h4 class="mb-0">{{ testimonial.clientName }}</h4>
+                    <p class="mb-1">{{ testimonial.profession }}</p>
+                    <div class="d-flex">
+                      <ng-container *ngFor="let star of [].constructor(testimonial.rating); let i = index">
+                        <small class="fas fa-star text-primary me-1">
+                          <fa-icon [icon]="faStar"></fa-icon>
+                        </small>
+                      </ng-container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+          </ng-container>
+          
+        </swiper-container>
+      </div>
+    </div>
+  </div>
+  <!-- Testimonial End -->
+  

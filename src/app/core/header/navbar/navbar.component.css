@@ -2,6 +2,11 @@
 /* Increase Navbar Height */
 
 /* Navbar top-bar style */
+.fixed-top {
+  position: fixed;
+  width: 100%; /* Ensure it spans the full width */
+  z-index: 1020; /* Ensure the navbar is above other content */
+}
 .top-bar {
     background-color: #052c65;
     font-size: 14px; /* Adjust text size for balance */
@@ -21,6 +26,17 @@
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  /* navbar.component.css */
+.collapse {
+  display: none; /* Hide by default */
+}
+
+.collapse.show {
+  display: block; /* Show when toggled */
+  transition: max-height 0.3s ease-out; /* Smooth transition */
+}
+
   .navbar-brand {
     font-family: "Montserrat Alternates", sans-serif;
     font-size: 2rem;
@@ -55,6 +71,24 @@
     display: flex;
     align-items: center;
   }
+
+  .bg-light {
+    background-color: #dcdbdb !important; /* Set to white or any other color */
+    text-align: center;
+    /* width: 130%; */
+  }
+
+  @media (max-width: 1145px) {
+    .buttons {
+      display: none;
+    }
+  }
+
+/* Add left padding */
+.navbar-nav {
+  padding-left: 15px; /* Adjust as needed for padding */
+}
+
   
   /* Adjust social icons */
   .navbar-nav {
@@ -104,81 +138,116 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
   }
 
- 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 15px 40px;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all 0.2s;
-  font-weight: bold;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn-white {
-  background-color: #5ba2ff;
-  color: #ffffff;
-}
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.btn-white::after {
-  background-color: #5ba2ff;
-}
-
-.btn:hover::after {
-  background-color: #002f9c;
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn-animated {
-  -webkit-animation: moveInBottom 5s ease-out;
-          animation: moveInBottom 5s ease-out;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-}
-
-@-webkit-keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+  
+  .buttons {
+    margin-top: 150px;
+    text-align: center;
+    border-radius: 30px;
+    /* background-color: aqua; */
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
+  
+  .blob-btn {
+    z-index: 1;
+    position: relative;
+    padding: 20px 40px;
+    /* margin-bottom: 30px; */
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
   }
-}
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+  .blob-btn:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 0px solid #fff;
+    border-radius: 30px;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
+  .blob-btn:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s 0.2s;
+    border-radius: 30px;
   }
-}
+  .blob-btn:hover {
+    color: #FFFFFF;
+    border-radius: 30px;
+  }
+  .blob-btn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+  }
+  .blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: #5ba2ff;
+  }
+  .blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url("#goo");
+  }
+  .blob-btn__blob {
+    position: absolute;
+    top: 2px;
+    width: 25%;
+    height: 100%;
+    background: #0505A9;
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+  }
+  @supports (filter: url("#goo")) {
+    .blob-btn__blob {
+      transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+  }
+  .blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+  }
+  .blob-btn__blob:nth-child(2) {
+    left: 30%;
+    transition-delay: 0.08s;
+  }
+  .blob-btn__blob:nth-child(3) {
+    left: 60%;
+    transition-delay: 0.16s;
+  }
+  .blob-btn__blob:nth-child(4) {
+    left: 90%;
+    transition-delay: 0.24s;
+  }
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+  }
+  @supports (filter: url("#goo")) {
+    .blob-btn:hover .blob-btn__blob {
+      transform: translateZ(0) scale(1.4);
+    }
+  }

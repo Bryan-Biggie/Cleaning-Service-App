@@ -38,6 +38,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ConfirmationModalComponent } from './pages/contact/confirmation-modal/confirmation-modal.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { PageHeaderComponent } from './shared/components/page-header/page-header.component';
+import { MainTestimonialComponent } from './pages/testimonial/main-testimonial/main-testimonial.component';
+import { MainContactComponent } from './pages/contact/main-contact/main-contact.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -62,7 +68,11 @@ import { ConfirmationModalComponent } from './pages/contact/confirmation-modal/c
     FootComponent,
     ContactComponent,
     QuoteComponent,
-    ConfirmationModalComponent
+    ConfirmationModalComponent,
+    NotFoundComponent,
+    PageHeaderComponent,
+    MainTestimonialComponent,
+    MainContactComponent
   ],
   imports: [
     BrowserModule,
@@ -81,6 +91,8 @@ import { ConfirmationModalComponent } from './pages/contact/confirmation-modal/c
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    NgbModule,
+    MatToolbarModule
   ],
   providers: [
     provideAnimationsAsync()

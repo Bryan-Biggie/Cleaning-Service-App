@@ -1,3 +1,9 @@
+<app-page-header [pageTitle]="'Services'"[breadcrumbs]="
+[
+    { name: 'Home', link: '/' },
+    { name: 'Services' }
+]">
+</app-page-header>
 <div class="container">
     <h1 class="mt-4 text-center">Our Cleaning Services</h1>
     <mat-accordion multi>
@@ -20,9 +26,10 @@
                     <li *ngFor="let includedService of service.servicesIncluded">{{ includedService }}</li>
                 </ul>
                 <button type="button" class="px-5 py-3 btn btn-primary border-2 rounded-pill bounce">
-                    Book Now
+                    Get Quote
                   </button>
             </div>
         </mat-expansion-panel>
     </mat-accordion>
 </div>
+<app-main-testimonial></app-main-testimonial>

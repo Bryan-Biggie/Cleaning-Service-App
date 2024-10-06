@@ -1,3 +1,11 @@
+<app-page-header [pageTitle]="'About'"[breadcrumbs]="
+[
+    { name: 'Home', link: '/' },
+    { name: 'About' }
+]">
+</app-page-header>
+<app-main-about></app-main-about>
+
 <div class="track-records-container">
     <!-- Floating Icons -->
     <fa-icon [icon]="faBroom" class="icon icon1"></fa-icon>
@@ -31,4 +39,5 @@
       </div>
     </div>
   </div>
-  
+  <app-main-team></app-main-team>
+  <app-new-letter></app-new-letter>

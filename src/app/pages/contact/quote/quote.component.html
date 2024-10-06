@@ -1,0 +1,329 @@
+<section class="section gray-bg" id="contactus">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Get Your Cleaning Quote</h2>
+                    <p>Fill in the form below to receive a personalized quotation for our cleaning services. Once you submit your request, our team will get in touch to schedule a visit and ensure your space is spotless!</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row flex-row-reverse">
+            <div class="col-md-7 col-lg-8 m-15px-tb card">
+                <div class="contact-form card-body">
+                    <form class="contactform contact_form needs-validation" id="cleaning_quotation_form" (submit)="sendEmail($event)" novalidate>
+                        <div class="returnmessage valid-feedback p-15px-b" data-success="Your quotation request has been received. We will contact you soon."></div>
+                        <div class="empty_notice invalid-feedback p-15px-b"><span>Please fill in the required fields.</span></div>
+                        
+                        <!-- Address -->
+                        <h2>Address</h2>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Street Address" formControlName="streetAddress" required>
+                            <div class="invalid-feedback">
+                                Please enter your Street Address.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" placeholder="Apt or Flat" formControlName="aptSuite">
+                            <div class="invalid-feedback">
+                                Please enter your Apt or Flat.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" placeholder="City" formControlName="city" required>
+                            <div class="invalid-feedback">
+                                Please enter your City.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" placeholder="State / Province" formControlName="state" required>
+                            <div class="invalid-feedback">
+                                Please enter your State / Province.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" placeholder="Postal / Zip Code" formControlName="postalCode" required>
+                            <div class="invalid-feedback">
+                                Please enter your Postal / Zip Code.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" placeholder="Country" formControlName="country" required>
+                            <div class="invalid-feedback">
+                                Please enter your Country.
+                            </div>
+                        </div>
+                    
+                        <!-- Phone Number -->
+                        <h2>Phone Number</h2>
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="areaCode">Area Code</label>
+                                <input class="form-control" id="areaCode" placeholder="(+27)" formControlName="areaCode" required>
+                                <div class="invalid-feedback">
+                                    Please enter your Area Code.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input class="form-control" id="phoneNumber" placeholder="23 456 7897" formControlName="phoneNumber" required>
+                                <div class="invalid-feedback">
+                                    Please enter your Phone Number.
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Email -->
+                        <h2>E-mail</h2>
+                        <div class="mb-3">
+                            <input class="form-control" placeholder="Email" formControlName="email" required type="email">
+                            <div class="invalid-feedback">
+                                Please enter a valid Email address.
+                            </div>
+                        </div>
+                    
+                        <!-- Interview Date -->
+                        <h2>Interview Date</h2>
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="interviewDate">Select your phone interview date*</label>
+                                <input class="form-control" id="interviewDate" placeholder="Select Date" formControlName="interviewDate" required type="date">
+                                <div class="invalid-feedback">
+                                    Please select your Interview Date.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="contactTime">Best time to contact*</label>
+                                <input class="form-control" id="contactTime" placeholder="14:00pm" formControlName="contactTime" required>
+                                <div class="invalid-feedback">
+                                    Please enter the Best time to contact.
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Commercial and Residential Buildings -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h2>Commercial Buildings ONLY</h2>
+                                <div class="row mb-3">
+                                    <div class="col-md-3 mb-3">
+                                        <label for="desks">Desks</label>
+                                        <input class="form-control" type="number" id="desks" placeholder="ex: 4" formControlName="desks" min="0">
+                                        <div class="invalid-feedback">
+                                            Please enter the number of Desks.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="restrooms">Restrooms</label>
+                                        <input class="form-control" type="number" id="restrooms" placeholder="ex: 5" formControlName="restrooms" min="0">
+                                        <div class="invalid-feedback">
+                                            Please enter the number of Restrooms.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="offices">Offices</label>
+                                        <input class="form-control" type="number" id="offices" placeholder="ex: 2" formControlName="offices" min="0">
+                                        <div class="invalid-feedback">
+                                            Please enter the number of Offices.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="comWindows">Windows</label>
+                                        <input class="form-control" type="number" id="comWindows" placeholder="ex: 15" formControlName="comWindows" min="0">
+                                        <div class="invalid-feedback">
+                                            Please enter the number of Windows.
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <h2>Residential Buildings ONLY</h2>
+                                <div class="row mb-3">
+                                    <div class="col-md-3 mb-3">
+                                        <label for="bedrooms">Bedrooms</label>
+                                        <input class="form-control" type="number" id="bedrooms" placeholder="ex: 4" formControlName="bedrooms" min="0">
+                                        <div class="invalid-feedback">
+                                            Please enter the number of Bedrooms.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="bathrooms">Bathrooms</label>
+                                        <input class="form-control" type="number" id="bathrooms" placeholder="ex: 2.5" formControlName="bathrooms" min="0">
+                                        <div class="invalid-feedback">
+                                            Please enter the number of Bathrooms.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="livingAreas">Living Areas</label>
+                                        <input class="form-control" type="number" id="livingAreas" placeholder="ex: 2" formControlName="livingAreas" min="0">
+                                        <div class="invalid-feedback">
+                                            Please enter the number of Living Areas.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="windows">Windows</label>
+                                        <input class="form-control" type="number" id="windows" placeholder="ex: 15" formControlName="windows" min="0">
+                                        <div class="invalid-feedback">
+                                            Please enter the number of Windows.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+<!-- Floor Type -->
+<div class="card mb-3">
+    <div class="card-body">
+        <h2>Floor Type</h2>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="carpet" id="carpet">
+            <label class="form-check-label" for="carpet">Carpet</label>
+            <div class="invalid-feedback">
+                Please select a Floor Type.
+            </div>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="vinyl" id="vinyl">
+            <label class="form-check-label" for="vinyl">Vinyl</label>
+            <div class="invalid-feedback">
+                Please select a Floor Type.
+            </div>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="ceramic" id="ceramic">
+            <label class="form-check-label" for="ceramic">Ceramic</label>
+            <div class="invalid-feedback">
+                Please select a Floor Type.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recurrence -->
+<div class="card mb-3">
+    <div class="card-body">
+        <h2>Recurrence</h2>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="recurrence" value="daily" id="daily" required>
+            <label class="form-check-label" for="daily">Daily</label>
+            <div class="invalid-feedback">
+                Please select a Recurrence option.
+            </div>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="recurrence" value="weekly" id="weekly" required>
+            <label class="form-check-label" for="weekly">Weekly</label>
+            <div class="invalid-feedback">
+                Please select a Recurrence option.
+            </div>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="recurrence" value="biweekly" id="biweekly" required>
+            <label class="form-check-label" for="biweekly">Bi-weekly</label>
+            <div class="invalid-feedback">
+                Please select a Recurrence option.
+            </div>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="recurrence" value="monthly" id="monthly" required>
+            <label class="form-check-label" for="monthly">Monthly</label>
+            <div class="invalid-feedback">
+                Please select a Recurrence option.
+            </div>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="recurrence" value="onetime" id="onetime" required>
+            <label class="form-check-label" for="onetime">One time</label>
+            <div class="invalid-feedback">
+                Please select a Recurrence option.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Building Information -->
+<!-- <div class="card mb-3">
+    <div class="card-body">
+        <h2>Building Information</h2>
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" formControlName="commercialBuilding" id="commercialBuilding">
+            <label class="form-check-label" for="commercialBuilding">Commercial Building $0</label>
+            <div class="invalid-feedback">
+                Please confirm if it is a Commercial Building.
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" placeholder="Square Footage" formControlName="commercialSqFoot" required>
+            <div class="invalid-feedback">
+                Please enter the Square Footage.
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+                            <!-- Comments -->
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h2>Comments</h2>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" placeholder="Comments" formControlName="comments"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        <!-- Coupon and Total -->
+                        <!-- <div class="card mb-3">
+                            <div class="card-body">
+                                <h2>Enter Coupon</h2>
+                                <div class="mb-3">
+                                    <input class="form-control" placeholder="Enter coupon" formControlName="couponCode">
+                                </div>
+                                <button class="btn btn-primary" type="submit">Apply</button>
+                    
+                                <h3>Subtotal:</h3>
+                                <h3>Tax: </h3>
+                                <h3>Total: </h3>
+                            </div>
+                        </div> -->
+
+                          <!-- Button to generate PDF -->
+                        <div class="col-md-12">
+                            <div class="send">
+                            <button type="submit" class="px-btn theme">
+                                <span>Submit Quote</span> <i class="arrow"></i>
+                            </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-4 m-15px-tb">
+                <div class="contact-name">
+                    <h5>EMail</h5>
+                    <p>infodomainname.com</p>
+                </div>
+                <div class="contact-name">
+                    <h5>Visit My Studio</h5>
+                    <p>Warnwe Park Streetperrine, <br>FL 33157 New York City</p>
+                </div>
+                <div class="contact-name">
+                    <h5>Phone</h5>
+                    <p>+01 123 654 8096</p>
+                </div>
+                <div class="social-share nav">
+                    <a class="dribbble" href="#">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                    <a class="behance" href="#">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a class="linkedin" href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,8 @@
+/*** Call To Action start ***/
+
+.call-to-action {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../../../../assets/img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+/*** Call To Action End ***/

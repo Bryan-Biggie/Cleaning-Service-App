@@ -1,0 +1,44 @@
+.container {
+    background-color: #f9f9f9; /* Light gray background for the container */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.mat-expansion-panel {
+    background-color: rgb(18, 54, 170); /* White background for the panels */
+    border: 3px solid #029aff; /* Dark blue border */
+    margin-bottom: 15px; /* Space between panels */
+}
+
+.mat-expansion-panel-header {
+    background-color: #052c65; /* Dark blue background for headers */
+    color: white; /* Text color */
+}
+
+.mat-expansion-panel-header:hover {
+    background-color: #0a3e87; /* Slightly darker blue on hover */
+}
+
+.mat-expansion-panel-content {
+    color: black; /* Text color in the content area */
+}
+
+.service-image {
+    width: 100%;
+    height: 350px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space between the image and text */
+}
+
+.service-details {
+    padding: 15px; /* Space around the service details */
+}
+
+button.mat-raised-button {
+    background-color: #052c65; /* Button background color */
+    color: white; /* Button text color */
+}
+
+button.mat-raised-button:hover {
+    background-color: #0a3e87; /* Darker blue on button hover */
+}

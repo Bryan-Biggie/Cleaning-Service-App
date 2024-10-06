@@ -1,0 +1,14 @@
+/*** Contact Start ***/
+.contact-link a i,
+.contact-link a h5,
+.contact-link a.h5 {
+    transition: .5s;
+}
+
+.contact-link a i:hover,
+.contact-link a h5:hover,
+.contact-link a.h5:hover {
+    color: var(--bs-primary) !important;
+}
+
+/*** Contact End ***/

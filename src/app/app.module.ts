@@ -1,18 +1,91 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { NavbarComponent } from './core/header/navbar/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CarouselComponent } from './pages/home/carousel/carousel.component';
+import { AboutComponent } from './pages/about/about.component';
+import { MainAboutComponent } from './pages/about/main-about/main-about.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { MainServicesComponent } from './pages/services/main-services/main-services.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { ModalComponent } from './pages/projects/modal/modal.component';
+import { MainProjectsComponent } from './pages/projects/main-projects/main-projects.component';
+import { NewLetterComponent } from './pages/home/new-letter/new-letter.component';
+import { PricingComponent } from './pages/pricing/pricing.component';
+import { MainPricingComponent } from './pages/pricing/main-pricing/main-pricing.component';
+import { TeamComponent } from './pages/team/team.component';
+import { MainTeamComponent } from './pages/team/main-team/main-team.component';
+import { TestimonialComponent } from './pages/testimonial/testimonial.component';
+import { FootComponent } from './core/footer/foot/foot.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { QuoteComponent } from './pages/contact/quote/quote.component'; // Import ReactiveFormsModule
+import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ConfirmationModalComponent } from './pages/contact/confirmation-modal/confirmation-modal.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    CarouselComponent,
+    AboutComponent,
+    MainAboutComponent,
+    ServicesComponent,
+    MainServicesComponent,
+    ProjectsComponent,
+    ModalComponent,
+    MainProjectsComponent,
+    NewLetterComponent,
+    PricingComponent,
+    MainPricingComponent,
+    TeamComponent,
+    MainTeamComponent,
+    TestimonialComponent,
+    FootComponent,
+    ContactComponent,
+    QuoteComponent,
+    ConfirmationModalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    MatIconModule,
+    MatExpansionModule, // Import Angular Material Expansion module
+    BrowserAnimationsModule,
+    ReactiveFormsModule ,
+    CommonModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    provideAnimationsAsync()
+  ],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

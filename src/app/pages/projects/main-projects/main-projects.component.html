@@ -1,0 +1,52 @@
+<div class="container-fluid py-5">
+    <div class="container py-5">
+      <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+        <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">
+          Our Project
+        </h5>
+        <h1 class="display-5">Our recently completed projects</h1>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <div class="text-center mb-4">
+        <button class="btn btn-outline-dark" (click)="setCategory('all')">All</button>
+        <button class="btn btn-outline-dark" (click)="setCategory('sanitizing')">Sanitizing</button>
+        <button class="btn btn-outline-dark" (click)="setCategory('cleaning')">Cleaning</button>
+      </div>
+  
+      <!-- Project Grid -->
+      <div class="row g-5">
+        <ng-container *ngFor="let project of projects">
+          <!-- Use ng-container to wrap *ngIf -->
+          <div *ngIf="selectedCategory === 'all' || selectedCategory === project.category"
+               class="col-xxl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" 
+               [attr.data-wow-delay]="project.delay">
+            <div class="project-item">
+              <div class="project-left bg-dark"></div>
+              <div class="project-right bg-dark"></div>
+              <img [src]="project.imageUrl" class="img-fluid h-100" alt="img" (click)="openModal(project.imageUrl, project.title)">
+              <a class="fs-4 fw-bold text-center">{{ project.title }}</a>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal for Viewing Image -->
+<div class="modal" tabindex="-1" *ngIf="isModalOpen">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: transparent; border: none;">
+        <div class="modal-header" style="border: none; display: flex; justify-content: space-between; align-items: center;">
+          <h5 class="modal-title" style="font-size: 1.8rem; color: white;">{{ imgTitle }}</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"><mat-icon>close</mat-icon></button>
+        </div>
+        <div class="modal-body p-0">
+          <img [src]="modalImageUrl" class="img-fluid" alt="Selected Project Image" style="display: block; margin: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

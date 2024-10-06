@@ -1,0 +1,166 @@
+.track-records-container {
+    background-color: #0d1956; /* Dark blue background */
+    color: white;
+    padding: 50px 0;
+    position: relative;
+    text-align: center;
+    overflow: hidden; /* Ensure floating icons stay within the container */
+  }
+  
+  .track-records-container h2 {
+    font-size: 2.5rem;
+    color: white;
+  }
+  
+  .track-records-container h2 span {
+    color: #f25b8c; /* Pinkish color */
+  }
+  
+  .records {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 20px; /* Add space between the items */
+  }
+  
+  .record-item {
+    flex: 1 1 calc(25% - 20px); /* Default is 4 items per row */
+    max-width: 200px;
+  }
+  
+  .record-item h3 {
+    font-size: 3rem;
+    color: #f25b8c; /* Pinkish color */
+  }
+  
+  .record-item p {
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  /* Floating Icons */
+  .icon {
+    position: absolute;
+    opacity: 0.2;
+    z-index: 0;
+    font-size: 30px; /* Default smaller size */
+  }
+  
+  /* Specific positioning for each icon */
+  .icon1 { top: 10px; left: 30px; }
+  .icon2 { top: 50px; right: 100px; }
+  .icon3 { bottom: 50px; left: 100px; }
+  .icon4 { bottom: 20px; right: 20px; }
+  .icon5 { top: 120px; left: 200px; }
+  .icon6 { top: 150px; right: 150px; }
+  .icon7 { bottom: 80px; left: 250px; }
+  .icon8 { bottom: 150px; right: 80px; }
+  
+  /* Optional Floating Animation */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .icon {
+    animation: float 5s ease-in-out infinite;
+  }
+  
+  /* RESPONSIVE STYLING */
+  /* Small screen adjustments for better visibility */
+  @media (max-width: 1024px) {
+    .track-records-container h2 {
+      font-size: 2rem;
+    }
+    
+    .records {
+      justify-content: space-between; /* Ensure proper spacing for 2 items per row */
+    }
+  
+    .record-item {
+      flex: 1 1 calc(50% - 20px); /* Adjust to 2 items per row */
+      max-width: 300px;
+    }
+  
+    .record-item h3 {
+      font-size: 2.5rem;
+    }
+    
+    .record-item p {
+      font-size: 1rem;
+    }
+  
+    /* Adjust the size and position of icons */
+    .icon {
+      font-size: 25px;
+    }
+  }
+  
+  /* For mobile devices (tablets and phones) */
+  @media (max-width: 768px) {
+    .track-records-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .record-item h3 {
+      font-size: 2rem;
+    }
+  
+    .record-item p {
+      font-size: 0.9rem;
+    }
+  
+    /* Smaller icons for mobile */
+    .icon {
+      font-size: 20px;
+    }
+  
+    /* Reposition icons for better fit */
+    .icon1 { top: 20px; left: 15px; }
+    .icon2 { top: 40px; right: 50px; }
+    .icon3 { bottom: 40px; left: 50px; }
+    .icon4 { bottom: 10px; right: 10px; }
+    .icon5 { top: 80px; left: 120px; }
+    .icon6 { top: 100px; right: 100px; }
+    .icon7 { bottom: 60px; left: 150px; }
+    .icon8 { bottom: 80px; right: 60px; }
+  }
+  
+  /* Extra small screens (mobile) */
+  @media (max-width: 480px) {
+    .track-records-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .record-item h3 {
+      font-size: 1.8rem;
+    }
+  
+    .record-item p {
+      font-size: 0.8rem;
+    }
+  
+    /* Even smaller icons for extra small screens */
+    .icon {
+      font-size: 15px;
+    }
+  
+    /* Further repositioning for smaller screens */
+    .icon1 { top: 30px; left: 5px; }
+    .icon2 { top: 30px; right: 20px; }
+    .icon3 { bottom: 20px; left: 20px; }
+    .icon4 { bottom: 10px; right: 5px; }
+    .icon5 { top: 60px; left: 100px; }
+    .icon6 { top: 60px; right: 70px; }
+    .icon7 { bottom: 30px; left: 100px; }
+    .icon8 { bottom: 50px; right: 40px; }
+  }
+  

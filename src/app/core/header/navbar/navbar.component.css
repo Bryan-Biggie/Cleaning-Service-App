@@ -1,0 +1,184 @@
+/* navbar.component.css */
+/* Increase Navbar Height */
+
+/* Navbar top-bar style */
+.top-bar {
+    background-color: #052c65;
+    font-size: 14px; /* Adjust text size for balance */
+  }
+  
+  /* Reduce the size of Angular Material icons */
+  .small-icon {
+     /* Smaller size for icons */
+    vertical-align: middle;
+  }
+  
+  /* Style for vertical line between each contact info */
+  .line-stroke {
+    width: 1px;
+    height: 20px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .navbar-brand {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .navbar-brand img {
+    max-width: 40px; /* Adjust the size of the logo */
+  }
+
+  .navbar-nav .nav-link {
+    color: var(--dark-color) !important;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important;
+  }
+  .text-white3{
+    color: #002f9c;
+  }
+  
+  .logo{
+    background-color: var(--text-color);
+
+  }
+  
+  /* Align icons and text centrally */
+  .contact-info .d-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Adjust social icons */
+  .navbar-nav {
+    margin-right: 40px; /* Adjust as needed */
+  }
+  /* Increase Navbar Height */
+    .navbar {
+        font-family: var(--font-family-base);
+    padding-top: 20px;    /* Add vertical padding */
+    padding-bottom: 20px; /* Add vertical padding */
+    height: 85px;         /* Set fixed height */
+    }
+  
+  .navbar .navbar-brand img {
+    max-height: 40px;
+  }
+  
+  .mat-raised-button {
+    background-color: #6296ff;
+    color: white;
+  }
+  
+  .mat-raised-button:hover {
+    background-color: #4f7de6;
+  }
+
+  /* Style for social icons */
+.social-icons .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;           /* Width and height to create a square */
+    height: 20px;
+    background-color: #20459b;  /* Square background color */
+    border-radius: 4px;     /* Slightly rounded corners */
+    margin-right: 10px;     /* Space between icons */
+    text-decoration: none;  /* Remove underline from links */
+    color: white;           /* Icon color */
+    transition: all 0.3s ease;  /* Smooth transition for hover effect */
+  }
+  
+  /* Icon hover effect */
+  .social-icons .social-icon:hover {
+    background-color: #6296ff; /* Change background color on hover */
+    color: white;
+    transform: scale(1.1);     /* Slight scale up on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+  }
+
+ 
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #5ba2ff;
+  color: #ffffff;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #5ba2ff;
+}
+
+.btn:hover::after {
+  background-color: #002f9c;
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  -webkit-animation: moveInBottom 5s ease-out;
+          animation: moveInBottom 5s ease-out;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+@-webkit-keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

@@ -1,0 +1,60 @@
+/*** Footer Start ***/
+.footer {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../../../../assets/img/carousel-2.jpg) center center no-repeat;
+    background-size: cover;
+    color: rgba(255, 255, 255, .7);
+    margin-top: 6rem;
+}
+
+.footer-item,
+.footer-item a {
+    color: rgba(255, 255, 255, .7);
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+/*** Footer End ***/
+
+
+/*** Copywright Start ***/
+
+.copyright .copyright-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright .copyright-icon {
+    width: 44px; 
+    height: 44px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+/*** Copywright End ***/
+.navbar-brand img {
+    max-width: 40px; /* Adjust the size of the logo */
+    /* background-color: var(--secondary-color);
+    border-radius: 50%; */
+  }
+
+  .back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    width: 58px;
+    height: 58px;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.navbar-brand {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  

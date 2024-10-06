@@ -1,0 +1,26 @@
+/*** Pricing Start ***/
+.pricing-item {
+    transition: .5s;
+    
+}
+
+.pricing-item:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    margin: -20px 0 20px 0;
+}
+
+.pricing-label {
+    border-bottom: 20px solid var(--bs-light);
+    border-radius: 0 0 300px 300px;
+    transition: .5s;
+}
+
+.pricing-item:hover .pricing-label {
+    border-color: rgba(0, 0, 0, .5);
+}
+
+.pricing-item:hover .pricing-label.pricing-featured {
+    border-color: rgba(255, 255, 255, .5);
+}
+
+/*** Pricing End ***/

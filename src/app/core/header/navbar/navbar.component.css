@@ -1,12 +1,8 @@
 /* navbar.component.css */
 /* Increase Navbar Height */
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
 
 /* Navbar top-bar style */
-.fixed-top {
-  position: fixed;
-  width: 100%; /* Ensure it spans the full width */
-  z-index: 1020; /* Ensure the navbar is above other content */
-}
 .top-bar {
     background-color: #052c65;
     font-size: 14px; /* Adjust text size for balance */
@@ -27,15 +23,6 @@
     margin-right: 10px;
   }
 
-  /* navbar.component.css */
-.collapse {
-  display: none; /* Hide by default */
-}
-
-.collapse.show {
-  display: block; /* Show when toggled */
-  transition: max-height 0.3s ease-out; /* Smooth transition */
-}
 
   .navbar-brand {
     font-family: "Montserrat Alternates", sans-serif;
@@ -43,65 +30,175 @@
     font-weight: bold;
     color: var(--text-color);
   }
-  
+   .logo{
+    background-color: var(--text-color);
+
+  } 
   .navbar-brand img {
     max-width: 40px; /* Adjust the size of the logo */
   }
 
-  .navbar-nav .nav-link {
-    color: var(--dark-color) !important;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: var(--accent-color) !important;
-  }
-  .text-white3{
-    color: #002f9c;
-  }
-  
-  .logo{
-    background-color: var(--text-color);
-
-  }
-  
-  /* Align icons and text centrally */
-  .contact-info .d-flex {
-    display: flex;
-    align-items: center;
-  }
-
-  .bg-light {
-    background-color: #dcdbdb !important; /* Set to white or any other color */
-    text-align: center;
-    /* width: 130%; */
-  }
-
-  @media (max-width: 1145px) {
-    .buttons {
-      display: none;
-    }
-  }
-
-/* Add left padding */
-.navbar-nav {
-  padding-left: 15px; /* Adjust as needed for padding */
+  /* Active Link Style */
+.nav-link.active {
+  color: #052c65; /* Change this to your desired active color */
+  font-weight: bold; /* Optional: make the active link bold */
 }
 
-  
-  /* Adjust social icons */
-  .navbar-nav {
-    margin-right: 40px; /* Adjust as needed */
+    /*===========================================================================*/
+
+/* General Navbar Styles */
+.navbar {
+  background-color: #dcdbdb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.text-white3 {
+  color: #002f9c;
+}
+
+/* Navbar Links for Small Screens (Mobile) */
+.navbar-links {
+  background-color: #dcdbdb;
+  max-height: 0; /* Initially hide links */
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.navbar-links.open {
+  max-height: 500px; /* Adjust according to menu content */
+  opacity: 1;
+}
+
+.nav-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin-left: 10px; /* Adjust the spacing between list items */
+}
+
+.nav-list li a {
+  text-decoration: none;
+  padding: 5px;
+  transition: color 0.3s ease;
+  display: block; /* Make sure the entire anchor tag is clickable */
+}
+
+.nav-list li a:hover {
+  color: #6296ff;
+}
+
+/* Mobile View Styling */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: block;
+    position: absolute;
+    top: 64px; /* Adjust based on your navbar height */
+    left: 0;
+    width: 100%;
+    background-color: #dcdbdb;
+    z-index: 10;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
-  /* Increase Navbar Height */
-    .navbar {
-        font-family: var(--font-family-base);
-    padding-top: 20px;    /* Add vertical padding */
-    padding-bottom: 20px; /* Add vertical padding */
-    height: 85px;         /* Set fixed height */
-    }
-  
+
+  .navbar-links.open {
+    max-height: 385px; /* Adjust based on content */
+    opacity: 1;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .nav-list li {
+    margin: 5px 0;
+  }
+
+  .nav-trigger {
+    display: block; /* Show the toggle button on small screens */
+  }
+}
+
+/* Hide Toggle Button on Large Screens */
+@media (min-width: 1200px) {
+  .nav-trigger {
+    display: none; /* Hide the toggle button on large screens */
+  }
+
+  .navbar-links {
+    display: flex; /* Always show links on large screens */
+    justify-content: flex-end;
+    align-items: center;
+    max-height: none; /* Remove max-height restriction */
+    opacity: 1; /* Ensure links are visible */
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none; /* Ensure no bullet points on large screens */
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-list li {
+    margin-right: 5px;
+  }
+
+  .nav-list li a:hover {
+    color: #6296ff;
+  }
+}
+
+/* Responsive Navbar for Medium Screens */
+@media (max-width: 1200px) {
+  .nav-trigger {
+    display: inline-block; /* Show the toggle button on smaller screens */
+  }
+
+  .navbar-links {
+    display: none; /* Hide links until the menu is opened */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+  }
+
+  .navbar-links.open {
+    display: flex; /* Show links when menu is toggled */
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-list li {
+    margin-bottom: 10px;
+  }
+
+  /* .custom-button {
+    margin-top: 20px;
+  } */
+}
+
+
+    /*===========================================================================*/
   .navbar .navbar-brand img {
     max-height: 40px;
   }
@@ -138,116 +235,198 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
   }
 
-  
-  .buttons {
-    margin-top: 150px;
-    text-align: center;
-    border-radius: 30px;
-    /* background-color: aqua; */
-  }
-  
-  .blob-btn {
-    z-index: 1;
+/* Quote Button Start**************************************************************************************/
+
+  .custom-button {
     position: relative;
-    padding: 20px 40px;
-    /* margin-bottom: 30px; */
-    text-align: center;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: transparent;
-    outline: none;
+    padding: 10px 20px;
     border: none;
-    transition: color 0.5s;
+    background: none;
     cursor: pointer;
-    border-radius: 30px;
-  }
-  .blob-btn:before {
-    content: "";
-    z-index: 1;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border: 0px solid #fff;
-    border-radius: 30px;
-  }
-  .blob-btn:after {
-    content: "";
-    z-index: -2;
-    position: absolute;
-    left: 3px;
-    top: 3px;
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s 0.2s;
-    border-radius: 30px;
-  }
-  .blob-btn:hover {
-    color: #FFFFFF;
-    border-radius: 30px;
-  }
-  .blob-btn:hover:after {
-    transition: all 0.3s;
-    left: 0;
-    top: 0;
-    border-radius: 30px;
-  }
-  .blob-btn__inner {
-    z-index: -1;
+    
+    font-family: "Source Code Pro";
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: hsla(210, 50%, 85%, 1);
+    
+    background-color: hsl(210, 80%, 42%);
+    box-shadow: var(--hsla(210, 40%, 52%, .4)) 2px 2px 22px;
+    border-radius: 50px;
+    z-index: 0;
     overflow: hidden;
+  }
+  
+  .custom-button:focus {
+    outline-color: transparent;
+    box-shadow: var(--btn-color) 2px 2px 22px;
+  }
+  
+  .custom-button .right::after, .custom-button::after {
+    content: var(--content);
+    display: block;
     position: absolute;
-    left: 0;
-    top: 0;
+    white-space: nowrap;
+    padding: 40px 40px;
+    pointer-events: none;
+  }
+  
+  .custom-button::after {
+    font-weight: 200;
+    top: -30px;
+    left: -20px;
+  }
+  
+  .custom-button .right, .custom-button .left {
+    position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 30px;
-    background: #5ba2ff;
+    top: 0;
   }
-  .blob-btn__blobs {
-    position: relative;
-    display: block;
-    height: 100%;
-    filter: url("#goo");
+  
+  .custom-button .right {
+    left: 66%;
   }
-  .blob-btn__blob {
+  
+  .custom-button .left {
+    right: 66%;
+  }
+  
+  .custom-button .right::after {
+    top: -30px;
+    left: calc(-66% - 20px);
+    
+    background-color: #141218;
+    color: transparent;
+    transition: transform .4s ease-out;
+    transform: translate(0, -90%) rotate(0deg);
+  }
+  
+  .custom-button:hover .right::after {
+    transform: translate(0, -47%) rotate(0deg);
+  }
+  
+  .custom-button .right:hover::after {
+    transform: translate(0, -50%) rotate(-7deg);
+  }
+  
+  .custom-button .left:hover ~ .right::after {
+    transform: translate(0, -50%) rotate(7deg);
+  }
+  
+  /* bubbles */
+  .custom-button::before {
+    content: '';
+    pointer-events: none;
+    opacity: .6;
+    background:
+      radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, hsla(210, 50%, 85%, 1) 3px, hsla(210, 50%, 85%, 1) 4px, transparent 4px),
+      radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, hsla(210, 50%, 85%, 1) 3px, hsla(210, 50%, 85%, 1) 4px, transparent 4px),
+      radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, hsla(210, 50%, 85%, 1) 5px, hsla(210, 50%, 85%, 1) 6px, transparent 6px);
+  
+    width: 100%;
+    height: 300%;
+    top: 0;
+    left: 0;
     position: absolute;
-    top: 2px;
-    width: 25%;
-    height: 100%;
-    background: #0505A9;
-    border-radius: 100%;
-    transform: translate3d(0, 150%, 0) scale(1.7);
-    transition: transform 0.45s;
+    animation: bubbles 5s linear infinite both;
   }
-  @supports (filter: url("#goo")) {
-    .blob-btn__blob {
-      transform: translate3d(0, 150%, 0) scale(1.4);
+  
+  @keyframes bubbles {
+    from {
+      transform: translate();
+    }
+    to {
+      transform: translate(0, -66.666%);
     }
   }
-  .blob-btn__blob:nth-child(1) {
-    left: 0%;
-    transition-delay: 0s;
-  }
-  .blob-btn__blob:nth-child(2) {
-    left: 30%;
-    transition-delay: 0.08s;
-  }
-  .blob-btn__blob:nth-child(3) {
-    left: 60%;
-    transition-delay: 0.16s;
-  }
-  .blob-btn__blob:nth-child(4) {
-    left: 90%;
-    transition-delay: 0.24s;
-  }
-  .blob-btn:hover .blob-btn__blob {
-    transform: translateZ(0) scale(1.7);
-  }
-  @supports (filter: url("#goo")) {
-    .blob-btn:hover .blob-btn__blob {
-      transform: translateZ(0) scale(1.4);
+  
+  /* Responsive adjustments */
+  @media (max-width: 555px) {
+     .custom-button {
+     display: none;
     }
+
   }
+  
+
+
+  /* Responsive adjustments for squashed button between 998px and 1201px */
+
+/* Quote Button End********************************************************************************************************/
+
+/* Menu Button Start******************************************************************************************************/
+/* Nav Trigger */
+.nav-trigger {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background: transparent;
+  border: none;
+  vertical-align: middle;
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+}
+.nav-trigger:focus {
+  outline: 0;
+}
+.nav-trigger:hover span,
+.nav-trigger:hover span:before,
+.nav-trigger:hover span:after {
+  background: #6296ff;
+}
+.nav-trigger:before {
+  content: "";
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+.nav-trigger span {
+  display: block;
+  position: relative;
+}
+.nav-trigger span:before, .nav-trigger span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.nav-trigger span:before {
+  top: -8px;
+}
+.nav-trigger span:after {
+  bottom: -8px;
+}
+.nav-trigger span,
+.nav-trigger span:before,
+.nav-trigger span:after {
+  width: 100%;
+  height: 4px;
+  background: #6296ff;
+  transition: all 0.4s ease;
+}
+.nav-trigger.is-active:before {
+  opacity: 1;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+}
+.nav-trigger.is-active span {
+  background: transparent;
+}
+.nav-trigger.is-active span:before {
+  top: 0;
+  transform: rotate(225deg);
+}
+.nav-trigger.is-active span:after {
+  bottom: 0;
+  transform: rotate(-225deg);
+}
+/* Menu Button End*************************************************/

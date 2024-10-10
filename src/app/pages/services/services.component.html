@@ -4,32 +4,4 @@
     { name: 'Services' }
 ]">
 </app-page-header>
-<div class="container">
-    <h1 class="mt-4 text-center">Our Cleaning Services</h1>
-    <mat-accordion multi>
-        <mat-expansion-panel *ngFor="let service of cleaningServices">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    {{ service.title }}
-                </mat-panel-title>
-                <mat-panel-description>
-                    Click to expand for details
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div class="service-details">
-                <img [src]="service.image" [alt]="service.title" class="service-image">
-                <div *ngFor="let paragraph of service.description">
-                    <p>{{ paragraph }}</p>
-                </div>
-                <h5>Services Included:</h5>
-                <ul>
-                    <li *ngFor="let includedService of service.servicesIncluded">{{ includedService }}</li>
-                </ul>
-                <button type="button" class="px-5 py-3 btn btn-primary border-2 rounded-pill bounce">
-                    Get Quote
-                  </button>
-            </div>
-        </mat-expansion-panel>
-    </mat-accordion>
-</div>
-<app-main-testimonial></app-main-testimonial>
+<!-- <app-service-details></app-service-details> -->

@@ -1,6 +1,7 @@
 /*** Pricing Start ***/
 .pricing-item {
     transition: .5s;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.267);
     
 }
 
@@ -22,5 +23,10 @@
 .pricing-item:hover .pricing-label.pricing-featured {
     border-color: rgba(255, 255, 255, .5);
 }
+
+.na {
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
+    text-decoration:line-through
+  }
 
 /*** Pricing End ***/

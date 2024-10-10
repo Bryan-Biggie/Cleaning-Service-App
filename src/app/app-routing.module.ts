@@ -8,16 +8,18 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { QuoteComponent } from './pages/contact/quote/quote.component';
 import { TeamComponent } from './pages/team/team.component';
 import { TestimonialComponent } from './pages/testimonial/testimonial.component';
+import { ServiceDetailsComponent } from './pages/services/service-details/service-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirect to Home
-  { path: 'Home', component: HomeComponent },
-  { path: 'About', component: AboutComponent },
-  { path: 'Team', component: TeamComponent },
-  { path: 'Services', component: ServicesComponent },
-  { path: 'Contact', component: ContactComponent },
-  { path: 'Quotation', component: QuoteComponent },
-  { path: 'Testimonial', component: TestimonialComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect to home
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'team', component: TeamComponent },
+  { path: 'services', component: ServicesComponent },
+  { path: 'services/:id', component: ServiceDetailsComponent }, // Route with parameter
+  { path: 'contact', component: ContactComponent },
+  { path: 'quotation', component: QuoteComponent },
+  { path: 'testimonial', component: TestimonialComponent },
   { path: '**', component: NotFoundComponent }, // Wildcard route for a 404 page
 ];
 

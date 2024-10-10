@@ -15,14 +15,14 @@ export class CarouselComponent {
         title: 'No 1 Cleaning Services',
         description: 'Your Hygienic Home Our Responsibility',
         btnText: 'Get Quote',
-        btnLink: '#'
+        btnLink: 'quotation'
       },
       {
         imgSrc: 'http://www.samstissue.co.za/img/slider-bg.jpg',
         title: 'Soft, Strong, and Absorbent',
         description: 'Quality TISSUE for Everyday Comfort',
         btnText: 'Read More',
-        btnLink: '#'
+        btnLink: 'quotation'
       },
       // Add more objects as needed
     ];

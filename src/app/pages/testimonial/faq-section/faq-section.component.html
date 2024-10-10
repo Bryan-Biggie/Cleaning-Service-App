@@ -1,0 +1,38 @@
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+      
+      <div class="container">
+        
+        <!-- <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary"> Questions</h5> -->
+        <div class="row gy-4">
+          
+          <div class="col-lg-4" data-aos="fade-down-right" data-aos-delay="100">
+            <div class="content px-xl-5">
+              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+              <p>
+                Have questions about our cleaning services? We’ve got answers! Below are some of the most frequently asked questions about how we work, our services, and what to expect.
+                If you don’t find your question here, feel free to reach out to us directly.
+              </p>
+              
+              </div>
+            </div>
+  
+            <div class="col-lg-8" data-aos="fade-down-left" data-aos-delay="200">
+  
+                <div class="faq-container">
+                    <div class="faq-item" *ngFor="let faq of faqItems; let i = index" [ngClass]="{'faq-active': activeFaqIndex === i}" data-aos="flip-up" data-aos-delay="400" (click)="toggleFaq(i)">
+                      <h3><span class="num">{{ i + 1 }}.</span> <span>{{ faq.question }}</span></h3>
+                      <div class="faq-content" *ngIf="activeFaqIndex === i">
+                        <p>{{ faq.answer }}</p>
+                      </div>
+                      <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div><!-- End Faq item-->
+                  </div>
+                  
+  
+            </div>
+          </div>
+  
+        </div>
+  
+      </section><!-- /Faq Section -->

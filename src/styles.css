@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+DE+Grund:wght@100..400&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
 
 @import url("../node_modules/wowjs/css/libs/animate.css");
 @import url("../node_modules/animate.css/animate.min.css");
@@ -69,7 +71,25 @@ a{
   --text-color: #ffffff; /* White for text */
   --dark-color: #212529; /* Dark color (remains the same) */
   --soft-green: #88d498; /* Soft Green (same as accent color) */
+  --background-color: #f9f9f9;
+  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Montserrat",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
 }
+
+.light-background {
+  --background-color: #f9f9f9;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #060606;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #252525;
+  --contrast-color: #ffffff;
+}
+
 
 
 
@@ -84,9 +104,9 @@ a{
 /* Define custom properties */
 :root {
   --font-family-base: 'Open', sans-serif;
-  --headings-font-family: "Archivo Black", sans-serif;
+  --headings-font-family: "Montserrat", sans-serif;
   --body-color: #3d3d3d;
-  --headings-color: #000000; /* Replace with your $dark color if known */
+  --headings-color: #32353a; /* Replace with your $dark color if known */
   --headings-font-weight: 700;
   --display-font-weight: 800;
   --border-radius: 10px;
@@ -99,14 +119,142 @@ a{
 
 /* Custom styles */
 body {
-  font-family: var(--font-family-base);
-  color: var(--body-color);
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--headings-font-family);
-  color: var(--headings-color);
+  color: var(--heading-color);
   font-weight: var(--headings-font-weight);
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Global font size rules, excluding .notNav */
+html {
+  font-size: 18px;
+}
+
+h1:not(.notNav *),
+h2:not(.notNav *),
+h3:not(.notNav *),
+h4:not(.notNav *),
+h5:not(.notNav *),
+h6:not(.notNav *),
+p:not(.notNav *),
+
+blockquote:not(.notNav *) {
+  line-height: 1.6;
+}
+
+h1:not(.notNav *) {
+  font-size: 3rem;
+}
+
+h2:not(.notNav *) {
+  font-size: 2.5rem;
+}
+
+h3:not(.notNav *) {
+  font-size: 2rem;
+}
+
+h4:not(.notNav *) {
+  font-size: 1.75rem;
+}
+
+h5:not(.notNav *) {
+  font-size: 1.5rem;
+}
+
+h6:not(.notNav *) {
+  font-size: 1.25rem;
+}
+
+/* p:not(.notNav *),
+span:not(.notNav *),
+a:not(.notNav *),
+li:not(.notNav *),
+blockquote:not(.notNav *) {
+  font-size: 1rem;
+} */
+
+/* Tablet View */
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  h1:not(.notNav *) {
+    font-size: 2.5rem;
+  }
+
+  h2:not(.notNav *) {
+    font-size: 2rem;
+  }
+
+  h3:not(.notNav *) {
+    font-size: 1.75rem;
+  }
+
+  h4:not(.notNav *) {
+    font-size: 1.5rem;
+  }
+
+  h5:not(.notNav *) {
+    font-size: 1.25rem;
+  }
+
+  h6:not(.notNav *) {
+    font-size: 1.1rem;
+  }
+
+  /* p:not(.notNav *),
+  span:not(.notNav *),
+  a:not(.notNav *),
+  li:not(.notNav *),
+  blockquote:not(.notNav *) {
+    font-size: 0.95rem;
+  } */
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  h1:not(.notNav *) {
+    font-size: 2rem;
+  }
+
+  h2:not(.notNav *) {
+    font-size: 1.75rem;
+  }
+
+  h3:not(.notNav *) {
+    font-size: 1.5rem;
+  }
+
+  h4:not(.notNav *) {
+    font-size: 1.25rem;
+  }
+
+  h5:not(.notNav *) {
+    font-size: 1.1rem;
+  }
+
+  h6:not(.notNav *) {
+    font-size: 1rem;
+  }
+
+  /* p:not(.notNav *),
+  span:not(.notNav *),
+  a:not(.notNav *),
+  li:not(.notNav *),
+  blockquote:not(.notNav *) {
+    font-size: 0.9rem;
+  } */
+}

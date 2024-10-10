@@ -1,6 +1,6 @@
 <!-- navbar.component.html -->
 <!-- Top bar -->
-<div class="container-fluid top-bar d-none d-lg-block py-2" style="background-color: #002f9c;">
+<div class="notNav container-fluid top-bar d-none d-lg-block py-2" style="background-color: #002f9c;">
     <div class="container d-flex justify-content-between align-items-center text-white">
       <div class="contact-info d-flex align-items-center">
         <div class="d-flex align-items-center me-3">
@@ -24,78 +24,37 @@
     </div>
   </div>
   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+ 
+  <nav class="navbar">
     <div class="container">
-      <a href="Home" class="logo rounded-pill navbar-brand mb-0 p-2 display-6"><span class="text-primary">Clean</span> <span class="text-white3 pe-2">Ease</span> <img src="../assets/img/cleaning.png"></a>
+      <!-- Brand Logo -->
+      <a href="home" class="logo rounded-pill navbar-brand mb-0 p-2 display-6"><span class="text-primary">Clean</span> <span class="text-white3 pe-2">Ease</span> <img src="../assets/img/cleaning.png"></a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" type="button" ngbDropdown (click)="isCollapsed = !isCollapsed">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div [ngbCollapse]="isCollapsed" 
-      [ngClass]="{'bg-light': !isCollapsed, 'collapsed': isCollapsed}"
-             class="collapse navbar-collapse w-full" 
-             id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="Home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="About">About</a>
-          </li>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Pages
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Page 1</a></li>
-              <li><a class="dropdown-item" href="#">Page 2</a></li>
-            </ul>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" routerLink="Team">Team</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" routerLink="Services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="Testimonial">Testimonial</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="Contact">Contact</a>
-          </li>
-        </ul>
-        
-          <!-- <a href="#" class="btn btn-white btn-animate">Get Quote</a> -->
-          <!-- <a href="#" class="button">Hover me</a> -->
-          <a class="buttons ">
-            <button routerLink="Quotation" class="blob-btn">
-              Get Quote
-              <span class="blob-btn__inner">
-                <span class="blob-btn__blobs">
-                  <span class="blob-btn__blob"></span>
-                  <span class="blob-btn__blob"></span>
-                  <span class="blob-btn__blob"></span>
-                  <span class="blob-btn__blob"></span>
-                </span>
-              </span>
-            </button>
-            <br/>
-          
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-            <defs>
-              <filter id="goo">
-                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
-                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-              </filter>
-            </defs>
-          </svg>
-        </a>
-      
+  
+
+
+    <!-- Navbar Links -->
+    <div class="navbar-links" [ngClass]="{'open': isMenuOpen}">
+      <ul class="nav-list">
+        <li><a routerLink="home" routerLinkActive="active" class="nav-link">Home</a></li>
+        <li><a routerLink="about" routerLinkActive="active" class="nav-link">About</a></li>
+        <li><a routerLink="team" routerLinkActive="active" class="nav-link">Team</a></li>
+        <li><a routerLink="services/1" routerLinkActive="active" class="nav-link">Services</a></li>
+        <li><a routerLink="testimonial" routerLinkActive="active" class="nav-link">Testimonial</a></li>
+        <li><a routerLink="contact" routerLinkActive="active" class="nav-link">Contact</a></li>
+      </ul>
+  
       </div>
+        <!-- Custom Button -->
+        <button class="custom-button" routerLink="quotation" style="--content: 'GET QUOTE';">
+          <div class="left"></div>
+          GET QUOTE
+          <div class="right"></div>
+        </button>
+            <!-- Toggle Button (nav-trigger) for small screens -->
+    <button class="nav-trigger" (click)="toggleMenu()" [ngClass]="{'is-active': isMenuOpen}">
+      <span></span>
+    </button>
     </div>
   </nav>
   

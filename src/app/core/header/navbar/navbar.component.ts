@@ -29,4 +29,22 @@ export class NavbarComponent {
         faInstagram = faInstagram;
         faLinkedinIn = faLinkedinIn;
         isCollapsed = true; // Initial state for navbar collapse
+isMenuOpen = false;  // Initially, the menu is closed 
+
+toggleMenu() {
+  this.isMenuOpen = !this.isMenuOpen;
+
+  // Add/remove the "open" class for the navbar links
+  const navbarLinks = document.querySelector('.navbar-links');
+  if (navbarLinks) {
+    navbarLinks.classList.toggle('open', this.isMenuOpen);
+  }
+
+  // Add/remove the "is-active" class for the nav-trigger button
+  const navTrigger = document.querySelector('.nav-trigger');
+  if (navTrigger) {
+    navTrigger.classList.toggle('is-active', this.isMenuOpen);
+  }
+}
+
 }

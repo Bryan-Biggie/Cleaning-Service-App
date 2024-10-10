@@ -44,6 +44,10 @@ import { MainTestimonialComponent } from './pages/testimonial/main-testimonial/m
 import { MainContactComponent } from './pages/contact/main-contact/main-contact.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { Main2AboutComponent } from './pages/about/main2-about/main2-about.component';
+import { Main2ServicesComponent } from './pages/services/main2-services/main2-services.component';
+import { ServiceDetailsComponent } from './pages/services/service-details/service-details.component';
+import { FaqSectionComponent } from './pages/testimonial/faq-section/faq-section.component';
 
 
 @NgModule({
@@ -72,7 +76,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     NotFoundComponent,
     PageHeaderComponent,
     MainTestimonialComponent,
-    MainContactComponent
+    MainContactComponent,
+    Main2AboutComponent,
+    Main2ServicesComponent,
+    ServiceDetailsComponent,
+    FaqSectionComponent
   ],
   imports: [
     BrowserModule,

@@ -4,4 +4,39 @@
     { name: 'Team' }
 ]">
 </app-page-header>
-<app-main-team></app-main-team>
+ <!-- Team Section -->
+ <section id="team" class="team section light-background">
+  <!-- Section Title -->
+  <div class="text-center mb-5" data-aos="fade-up" data-aos-delay=".3s">
+    <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Our Team</h5>
+    <p class="display-8 w-10 mx-auto">Meet the professionals behind our cleaning services, ensuring top-notch quality and service delivery.</p>
+  </div>
+  <!-- <div class="container section-title" data-aos="fade-up">
+    <h2>Team</h2>
+    <p>Meet the professionals behind our cleaning services, ensuring top-notch quality and service delivery.</p>
+  </div> -->
+  <!-- End Section Title -->
+
+  <div class="container">
+    <div class="row gy-5">
+      <div class="col-lg-4 col-md-6 member" *ngFor="let member of teamMembers" data-aos="fade-up" [attr.data-aos-delay]="member.id * 100">
+        <div class="member-img">
+          <img [src]="member.image" class="img-fluid" alt="{{ member.name }}">
+          <div class="social">
+            <a [href]="member.social.twitter"><i class="bi bi-twitter-x"></i></a>
+            <a [href]="member.social.facebook"><i class="bi bi-facebook"></i></a>
+            <a [href]="member.social.instagram"><i class="bi bi-instagram"></i></a>
+            <a [href]="member.social.linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="member-info text-center">
+          <h4>{{ member.name }}</h4>
+          <span>{{ member.position }}</span>
+          <p>{{ member.description }}</p>
+        </div>
+      </div><!-- End Team Member -->
+    </div>
+  </div>
+</section><!-- /Team Section -->
+
+<!-- <app-main-team></app-main-team> -->

@@ -79,3 +79,29 @@
 }
 
 /*** About End ***/
+
+/* Default size for large screens */
+.responsive-icon {
+    font-size: 4rem; /* Similar to fa-4x */
+}
+
+/* Adjust the icon size on medium screens (between 768px and 991px) */
+@media (max-width: 991px) {
+    .responsive-icon {
+        font-size: 3.5rem; /* Slightly smaller for medium screens */
+    }
+}
+
+/* Adjust the icon size on small screens (less than 768px) */
+@media (max-width: 768px) {
+    .responsive-icon {
+        font-size: 3rem; /* Smaller size for small screens */
+    }
+}
+
+/* Adjust the icon size on extra-small screens (less than 576px) */
+@media (max-width: 576px) {
+    .responsive-icon {
+        font-size: 2.5rem; /* Further reduced size for extra-small screens */
+    }
+}

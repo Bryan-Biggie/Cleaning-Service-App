@@ -5,18 +5,19 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-item">
                             <h4 class="text-white fw-bold mb-4">About PestKit.</h4>
-                            <p>Nostrud exertation ullamco labor nisi aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
-                            <p class="mb-0"><a class="" href="#">PestKit </a> &copy; 2023 All Right Reserved.</p>
+                            <p>Since our establishment in 2008, we have been committed to providing exceptional cleaning services for homes and businesses.
+                                </p>
+                            <p class="mb-0"><a class="" href="#">CleanEase </a> &copy; 2024 All Right Reserved.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-item">
                             <h4 class="text-white fw-bold mb-4">Usefull Link</h4>
                             <div class="d-flex flex-column align-items-start">
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>About Us</a>
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Contact Us</a>
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Our Services</a>
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Terms & Condition</a>
+                                <a class="btn btn-link ps-0" routerLink="about"><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>About Us</a>
+                                <a class="btn btn-link ps-0" routerLink="contact"><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Contact Us</a>
+                                <a class="btn btn-link ps-0" routerLink="services/1"><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Our Services</a>
+                                <a class="btn btn-link ps-0" routerLink="services/1"><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Terms & Condition</a>
                             </div>
                         </div>
                     </div>
@@ -24,10 +25,10 @@
                         <div class="footer-item">
                             <h4 class="text-white fw-bold mb-4">Services Link</h4>
                             <div class="d-flex flex-column align-items-start">
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Apartment Cleaning</a>
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Office Cleaning</a>
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Car Washing</a>
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Green Cleaning</a>
+                                <a class="btn btn-link ps-0" routerLink="services/1"><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Commercial Cleaning</a>
+                                <a class="btn btn-link ps-0" routerLink="services/2"><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Residential Cleaning</a>
+                                <a class="btn btn-link ps-0" routerLink="services/1"><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Healthcare Facility Cleaning</a>
+                                <a class="btn btn-link ps-0" routerLink="services/6"><i class="fa fa-check me-2"><fa-icon [icon]="faCheck"></fa-icon></i>Window Cleaning</a>
                             </div>
                             
                         </div>
@@ -76,7 +77,12 @@
         <!-- Back to Top -->
         <!-- <a href="#" class="btn btn-primary rounded-circle border-3 back-to-top"><i class="fa fa-arrow-up"><fa-icon [icon]="faArrowAltCircleUp"></fa-icon></i></a> -->
         <!-- back-to-top.component.html -->
-<a *ngIf="showButton" href="#" class="btn btn-primary rounded-circle border-3 back-to-top" (click)="scrollToTop()" [@fadeInOut]="showButton ? 'visible' : 'hidden'">
+<!-- <a *ngIf="showButton" routerLink="home" class="btn btn-primary rounded-circle border-3 back-to-top" (click)="scrollToTop()" [@fadeInOut]="showButton ? 'visible' : 'hidden'">
     <fa-icon [icon]="faArrowAltCircleUp"></fa-icon>
-  </a>
+  </a> -->
+
+  <a *ngIf="showButton" class="btn btn-primary rounded-circle border-3 back-to-top" (click)="scrollToTop()" [@fadeInOut]="showButton ? 'visible' : 'hidden'">
+    <fa-icon [icon]="faArrowAltCircleUp"></fa-icon>
+</a>
+
   
